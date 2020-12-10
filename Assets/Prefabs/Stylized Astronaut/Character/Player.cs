@@ -99,8 +99,6 @@ public class Player : MonoBehaviour
         // 적 레이더와 부딪혔다면 hp 감소
         /*if(other.gameObject.tag == "")
         {
-            hp--;
-
             // easy, normal / hard 씬 구분해서 life image 처리해야함.
             if(max_hp == 3)
             {
@@ -137,10 +135,12 @@ public class Player : MonoBehaviour
                         break;
                 }
             }
+        hp--;
         }*/
         // 별을 먹었다면 2초 동안 스피드 2배
-        if(other.gameObject.tag == "star")
+        if (other.gameObject.tag == "star")
         {
+            Destroy(other.gameObject);
             StartCoroutine(eatStar(2.0f));
         }
     }
